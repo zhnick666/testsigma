@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "test-fb5f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "test-fb5f"
+  template:
+    metadata:
+      labels:
+        app: "test-fb5f"
+    spec:
+      containers:
+        - name: "test-fb5f"
+          image: "testsigma.azurecr.io/test"
+          ports:
+          - containerPort: 443
